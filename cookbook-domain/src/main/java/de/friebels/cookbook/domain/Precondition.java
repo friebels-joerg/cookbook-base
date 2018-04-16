@@ -21,7 +21,7 @@ final class Precondition {
         return value;
     }
 
-    public static String checkIsNotNull(final String value, final String parameterName) {
+    public static String checkNotNullableString(final String value, final String parameterName) {
         Objects.requireNonNull(value, "Parameter '" + parameterName + "' must not be null");
         return value;
     }
