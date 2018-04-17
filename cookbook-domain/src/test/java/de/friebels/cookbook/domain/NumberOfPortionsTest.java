@@ -26,8 +26,7 @@ class NumberOfPortionsTest {
         }
     }
 
-    @Nested
-    class Comparing {
+    @Nested class Comparing {
 
         @Test
         void should_compare_to_other_weights() {

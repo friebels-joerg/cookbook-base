@@ -28,17 +28,8 @@
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- even so I do want to run junit 5 tests only, intellij wants to have a junit 4 -->
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
