@@ -1,0 +1,10 @@
+#maven
+/target
+
+#intellij
+*.iml
+/.idea
+/.DS_Store
+
+#jenv
+.java-version
