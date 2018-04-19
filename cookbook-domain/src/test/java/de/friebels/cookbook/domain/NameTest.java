@@ -11,19 +11,19 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class NameTest {
 
-    @Nested class Invariants2 {
+    @Nested class Invariants {
 
         @Test
-        void should_throw_exception_when_passing_null_value() {
-            assertThrows(NullPointerException.class, () -> Name.of(null));
+        void throwsException_WhenValueIsNull() {
+            assertThrows(IllegalArgumentException.class, () -> Name.of(null));
         }
     }
 
     @Nested
-    class Comparing2 {
+    class Comparing {
 
         @Test
-        void should_compare_to_other_weights() {
+        void compareTo() {
             assertAll(
                     () -> assertThat(HÜHNERFRIKASSE.compareTo(HÜHNERFRIKASSE)).isEqualTo(0),
                     () -> assertThat(CORDON_BLEU.compareTo(HÜHNERFRIKASSE)).isLessThan(0),

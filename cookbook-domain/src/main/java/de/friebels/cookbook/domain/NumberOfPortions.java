@@ -2,12 +2,14 @@ package de.friebels.cookbook.domain;
 
 import java.util.Objects;
 
-public class NumberOfPortions implements Comparable<NumberOfPortions> {
+import static de.friebels.cookbook.domain.Precondition.checkIsNaturalNumber;
+
+public class NumberOfPortions  {
 
     private Integer value;
 
     private NumberOfPortions(final Integer value) {
-        this.value = Precondition.checkIsNaturalNumber(value, "value");
+        this.value = checkIsNaturalNumber(value, "value");
     }
 
     public static NumberOfPortions of(final Integer value) {
@@ -16,11 +18,6 @@ public class NumberOfPortions implements Comparable<NumberOfPortions> {
 
     public Integer getValue() {
         return value;
-    }
-
-    @Override
-    public int compareTo(final NumberOfPortions that) {
-        return this.getValue().compareTo(that.getValue());
     }
 
     @Override
@@ -42,7 +39,7 @@ public class NumberOfPortions implements Comparable<NumberOfPortions> {
 
     @Override
     public String toString() {
-        return "NumberOfPortions{value=" + value + "}";
+        return String.format("numberOfPortions=%d", value);
     }
 
 }

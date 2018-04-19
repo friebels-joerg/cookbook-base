@@ -10,31 +10,27 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NumberOfPortionsTest {
 
-    @Nested class Invariants {
+    public static final int MINIMUM_VALUE = 1;
 
-        @Test
-        void should_throw_exception_when_passing_null_value() {
-            assertThrows(NullPointerException.class, () -> NumberOfPortions.of(null));
+    @Nested class Creation {
+
+        @Nested class Invariants {
+
+            @Test
+            void of_throwsException_whenValueIsNull() {
+                assertThrows(IllegalArgumentException.class, () -> NumberOfPortions.of(null));
+            }
+
+            @Test
+            void of_throwsException_whenValueIsntANaturalNumber() {
+                assertThrows(IllegalArgumentException.class, () -> NumberOfPortions.of(MINIMUM_VALUE - 1));
+            }
         }
 
         @Test
-        void should_throw_exception_when_passing_not_natural_value() {
-            assertAll(
-                    () -> assertThrows(IllegalArgumentException.class, () -> NumberOfPortions.of(-1)),
-                    () -> assertThrows(IllegalArgumentException.class, () -> NumberOfPortions.of(0))
-            );
+        void of() {
+            assertThat(NumberOfPortions.of(MINIMUM_VALUE).getValue()).isEqualTo(MINIMUM_VALUE);
         }
-    }
 
-    @Nested class Comparing {
-
-        @Test
-        void should_compare_to_other_weights() {
-            assertAll(
-                    () -> assertThat(ONE.compareTo(ONE)).isEqualTo(0),
-                    () -> assertThat(ONE.compareTo(TWO)).isLessThan(0),
-                    () -> assertThat(TWO.compareTo(ONE)).isGreaterThan(0)
-            );
-        }
     }
 }

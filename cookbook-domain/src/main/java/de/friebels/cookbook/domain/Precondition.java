@@ -14,15 +14,25 @@ final class Precondition {
      * Natural number are >= 1
      */
     static Integer checkIsNaturalNumber(final Integer value, final String parameterName) {
-        Objects.requireNonNull(value, "Parameter '" + parameterName + "' must not be null");
+        checkNotNullable(value, parameterName);
         if (value < 1) {
-            throw new IllegalArgumentException("Parameter '" + parameterName + "' must not be negative");
+            throw new IllegalArgumentException(String.format("Parameter '%s' must not be negative", parameterName));
         }
         return value;
     }
 
-    public static String checkNotNullableString(final String value, final String parameterName) {
-        Objects.requireNonNull(value, "Parameter '" + parameterName + "' must not be null");
+    public static <T> T checkNotNullable(final T value, final String parameterName) {
+        if (value==null)
+            throw new IllegalArgumentException( String.format("Parameter '%s' must not be null", parameterName));
+        return value;
+    }
+
+    public static String checkExactLengthString(final String value, final String parameterName, final Integer length) {
+        checkNotNullable(value, parameterName);
+        if (value.length() != length) {
+            throw new IllegalArgumentException(
+                    String.format("Parameter '%s' has to be exactly %d characters long", parameterName, length));
+        }
         return value;
     }
 }

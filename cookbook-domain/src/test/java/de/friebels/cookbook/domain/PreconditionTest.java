@@ -10,33 +10,43 @@ class PreconditionTest {
 
     @Nested class CheckIsNaturalNumber {
 
-        @Test
-        void should_throw_exception_when_passing_null_value() {
-            assertThrows(NullPointerException.class, () -> Precondition.checkIsNaturalNumber(null, "dummy"));
+        private static final int MINIMAL_NATURAL_NUMBER = 1;
+
+        @Nested class Invariants {
+
+            @Test
+            void throwsException_WhenPassingNullValue() {
+                assertThrows(IllegalArgumentException.class, () -> Precondition.checkIsNaturalNumber(null, "dummy"));
+            }
+
+            @Test
+            void throwsException_WhenPassingNoneNaturalNumber() {
+                assertThrows(IllegalArgumentException.class,
+                        () -> Precondition.checkIsNaturalNumber(MINIMAL_NATURAL_NUMBER - 1, "dummy"));
+            }
         }
 
         @Test
-        void should_throw_exception_when_passing_not_natural_number() {
-            assertThrows(IllegalArgumentException.class,
-                    () -> Precondition.checkIsNaturalNumber(0, "dummy"));
-        }
-
-        @Test
-        void should_return_number_when_passing_natural_number() {
-            assertThat(Precondition.checkIsNaturalNumber(1, "dummy")).isEqualTo(1);
+        void checkIsNaturalNumber() {
+            assertThat(Precondition.checkIsNaturalNumber(MINIMAL_NATURAL_NUMBER, "dummy"))
+                    .isEqualTo(MINIMAL_NATURAL_NUMBER);
         }
     }
 
-    @Nested
-    class CheckNotNullableString {
-        @Test
-        void should_throw_exception_when_passing_null_value() {
-            assertThrows(NullPointerException.class, () -> Precondition.checkNotNullableString(null, "dummy"));
+    @Nested class CheckNotNullable {
+
+        @Nested class Invariants {
+
+            @Test
+            void throwsException_WhenPassingNullValue() {
+                assertThrows(IllegalArgumentException.class, () -> Precondition.checkNotNullable(null, "dummy"));
+            }
         }
 
         @Test
-        void should_return_value_when_passing_natural_number() {
-            assertThat(Precondition.checkNotNullableString("aString", "dummy")).isEqualTo("aString");
+        void checkNotNullable() {
+            final String expected = "anyNotNullObject";
+            assertThat(Precondition.checkNotNullable(expected, "dummy")).isEqualTo(expected);
         }
     }
 }
