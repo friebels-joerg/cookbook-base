@@ -3,7 +3,7 @@ package de.friebels.cookbook.domain;
 import java.util.Objects;
 import java.util.UUID;
 
-import static de.friebels.cookbook.domain.Precondition.checkExactLengthString;
+import static de.friebels.cookbook.domain.Constraint.checkExactLengthString;
 
 public class Id {
 
@@ -44,7 +44,6 @@ public class Id {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(value);
     }
 }

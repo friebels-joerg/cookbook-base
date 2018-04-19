@@ -1,6 +1,7 @@
 package de.friebels.cookbook.domain;
 
-public class NumberOfPortionsTemplate {
-    public static final NumberOfPortions ONE = NumberOfPortions.of(1);
-    public static final NumberOfPortions TWO = NumberOfPortions.of(2);
+class NumberOfPortionsTemplate {
+
+    static final NumberOfPortions ONE = NumberOfPortions.of(1);
+    static final NumberOfPortions TWO = NumberOfPortions.of(2);
 }

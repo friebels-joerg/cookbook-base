@@ -10,9 +10,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NumberOfPortionsTest {
 
-    public static final int MINIMUM_VALUE = 1;
-
     @Nested class Creation {
+
+        static final int MINIMUM_VALUE = 1;
 
         @Nested class Invariants {
 

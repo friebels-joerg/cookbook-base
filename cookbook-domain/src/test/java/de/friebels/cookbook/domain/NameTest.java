@@ -19,8 +19,7 @@ class NameTest {
         }
     }
 
-    @Nested
-    class Comparing {
+    @Nested class Comparing {
 
         @Test
         void compareTo() {

@@ -2,7 +2,7 @@ package de.friebels.cookbook.domain;
 
 import java.util.Objects;
 
-import static de.friebels.cookbook.domain.Precondition.checkNotNullable;
+import static de.friebels.cookbook.domain.Constraint.checkNotNullable;
 
 public class Name implements Comparable<Name> {
     private String value;
@@ -43,7 +43,6 @@ public class Name implements Comparable<Name> {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(value);
     }
 }

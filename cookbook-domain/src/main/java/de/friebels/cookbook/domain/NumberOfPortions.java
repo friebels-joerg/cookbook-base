@@ -2,7 +2,7 @@ package de.friebels.cookbook.domain;
 
 import java.util.Objects;
 
-import static de.friebels.cookbook.domain.Precondition.checkIsNaturalNumber;
+import static de.friebels.cookbook.domain.Constraint.checkIsNaturalNumber;
 
 public class NumberOfPortions  {
 

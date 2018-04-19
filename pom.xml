@@ -12,6 +12,7 @@
     <modules>
         <module>cookbook-domain</module>
         <module>cookbook-rest</module>
+        <module>cookbook-jpa-persistence</module>
     </modules>
 
     <properties>
