@@ -16,7 +16,7 @@ import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public abstract class JPAHibernateTest {
+public abstract class JpaHibernateTest {
 
     protected static EntityManagerFactory emf;
     protected static EntityManager em;
@@ -25,22 +25,6 @@ public abstract class JPAHibernateTest {
     public static void init() throws FileNotFoundException, SQLException {
         emf = Persistence.createEntityManagerFactory("cookbook-test");
         em = emf.createEntityManager();
-    }
-
-    @BeforeEach
-    public void initializeDatabase(){
-        Session session = em.unwrap(Session.class);
-        session.doWork(new Work() {
-            @Override
-            public void execute(Connection connection) throws SQLException {
-                try {
-                    File script = new File(getClass().getResource("/data.sql").getFile());
-                    RunScript.execute(connection, new FileReader(script));
-                } catch (FileNotFoundException e) {
-                    throw new RuntimeException("could not initialize with script");
-                }
-            }
-        });
     }
 
     @AfterAll

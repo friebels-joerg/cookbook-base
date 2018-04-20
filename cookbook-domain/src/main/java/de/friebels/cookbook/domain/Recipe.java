@@ -5,11 +5,19 @@ public class Recipe {
     private Name name;
     private NumberOfPortions numberOfPortions;
 
-    void setName(final Name name) {
-        this.name = name;
+    public Id getId() {
+        return id;
     }
 
     public void setId(final Id id) {
         this.id = id;
+    }
+
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(final Name name) {
+        this.name = name;
     }
 }

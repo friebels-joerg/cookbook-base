@@ -1,7 +1,5 @@
 package de.friebels.cookbook.domain;
 
-import java.util.Objects;
-
 /**
  * use this to chaeck parameters of methods....
  */
@@ -11,12 +9,12 @@ final class Constraint {
     }
 
     /**
-     * Natural number are >= 1
+     * Natural number are > 0
      */
     static Integer checkIsNaturalNumber(final Integer value, final String parameterName) {
         checkNotNullable(value, parameterName);
         if (value < 1) {
-            throw new IllegalArgumentException(String.format("Parameter '%s' must not be negative", parameterName));
+            throw new IllegalArgumentException(String.format("Parameter '%s' must > 0", parameterName));
         }
         return value;
     }
@@ -34,5 +32,40 @@ final class Constraint {
                     String.format("Parameter '%s' has to be exactly %d characters long", parameterName, length));
         }
         return value;
+    }
+
+    static class RecipeBuilder {
+
+        private final Recipe recipe;
+
+        static RecipeBuilder recipeBuilder() {
+            return new RecipeBuilder();
+        }
+
+        private RecipeBuilder() {
+            recipe = new Recipe();
+        }
+
+        RecipeBuilder withId(String id) {
+            return withId(Id.of(id));
+        }
+
+        RecipeBuilder withId(Id id) {
+            recipe.setId(id);
+            return this;
+        }
+
+        RecipeBuilder withName(String name) {
+            return withName(Name.of(name));
+        }
+
+        RecipeBuilder withName(Name name) {
+            recipe.setName(name);
+            return this;
+        }
+
+        Recipe build() {
+            return recipe;
+        }
     }
 }

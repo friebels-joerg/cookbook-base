@@ -11,7 +11,7 @@ public class Name implements Comparable<Name> {
         this.value = checkNotNullable(value, "value");
     }
 
-    static Name of(final String value) {
+    public static Name of(final String value) {
         return new Name(value);
     }
 

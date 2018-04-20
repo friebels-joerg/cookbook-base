@@ -12,13 +12,12 @@ public class RecipeEntity {
 
     String name;
 
-    private RecipeEntity() {
+    RecipeEntity() {
         // solves: HHH000182: No default (no-argument) constructor for class
     }
 
-    public RecipeEntity(final String id, final String name) {
-        this.id = id;
-        this.name = name;
+    public String getId() {
+        return id;
     }
 
     public void setId(final String id) {
