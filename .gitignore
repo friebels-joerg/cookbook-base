@@ -5,6 +5,7 @@
 *.iml
 /.idea
 /.DS_Store
+/db
 
 #jenv
 .java-version
