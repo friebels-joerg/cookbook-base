@@ -8,11 +8,11 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
 
 @JsonAutoDetect(fieldVisibility = ANY)
-public class RecipesDto {
+public class RecipeListDto {
 
-    private List<RecipeDto> recipes = new ArrayList<>();
+    private List<RecipeListEntryDto> recipes = new ArrayList<>();
 
-    public void add(final RecipeDto recipe) {
+    public void add(final RecipeListEntryDto recipe) {
         recipes.add(recipe);
     }
 }

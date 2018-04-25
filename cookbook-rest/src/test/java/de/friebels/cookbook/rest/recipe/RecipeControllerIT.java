@@ -1,7 +1,10 @@
 package de.friebels.cookbook.rest.recipe;
 
+import de.friebels.cookbook.domain.recipe.AbstractDaoFactory;
+import de.friebels.cookbook.jpa.persistence.recipe.CookbookTestJpaDaoFactory;
 import de.friebels.cookbook.rest.recipe.RecipeController;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,6 +21,11 @@ class RecipeControllerIT {
 
     @Autowired
     private MockMvc mvc;
+
+    @BeforeAll
+    public static void beforeAll() {
+        AbstractDaoFactory.setDaoFactory(new CookbookTestJpaDaoFactory());
+    }
 
     @Nested class Get {
 
