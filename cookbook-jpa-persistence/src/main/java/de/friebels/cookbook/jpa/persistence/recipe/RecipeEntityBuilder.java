@@ -22,8 +22,6 @@ class RecipeEntityBuilder {
     public RecipeEntityBuilder withId(final Id id) {
         if (id != null && StringUtils.isNoneBlank(id.getValue())) {
             recipeEntity.setId(id.getValue());
-        } else {
-            recipeEntity.setId(UUID.randomUUID().toString());
         }
         return this;
     }

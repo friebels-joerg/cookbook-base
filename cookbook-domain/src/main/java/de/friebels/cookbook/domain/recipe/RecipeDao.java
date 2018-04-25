@@ -4,4 +4,6 @@ import de.friebels.cookbook.domain.Id;
 
 public interface RecipeDao {
     Id save(Recipe recipe);
+
+    RecipeList get();
 }

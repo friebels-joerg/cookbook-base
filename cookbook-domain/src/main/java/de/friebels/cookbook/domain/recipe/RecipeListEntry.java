@@ -2,12 +2,10 @@ package de.friebels.cookbook.domain.recipe;
 
 import de.friebels.cookbook.domain.Id;
 import de.friebels.cookbook.domain.Name;
-import de.friebels.cookbook.domain.NumberOfPortions;
 
-public class Recipe {
+public class RecipeListEntry {
     private Id id;
     private Name name;
-    private NumberOfPortions numberOfPortions;
 
     public Id getId() {
         return id;

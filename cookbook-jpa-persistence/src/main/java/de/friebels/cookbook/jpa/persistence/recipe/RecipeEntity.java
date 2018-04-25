@@ -4,9 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.apache.commons.lang3.StringUtils;
+
 @Entity
-@Table(name="Recipe")
+@Table(name = "Recipe")
 public class RecipeEntity {
+
     @Id
     String id;
 
@@ -26,5 +29,13 @@ public class RecipeEntity {
 
     public void setName(final String name) {
         this.name = name;
+    }
+
+    public boolean idIsNotSet() {
+        if (id == null) {
+            return true;
+        }
+
+        return StringUtils.isNoneBlank(id);
     }
 }

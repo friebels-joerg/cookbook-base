@@ -7,6 +7,9 @@ public class RecipeBuilder {
 
     private Recipe recipe = new Recipe();
 
+    private RecipeBuilder() {
+    }
+
     public static RecipeBuilder builder() {
         return new RecipeBuilder();
     }
