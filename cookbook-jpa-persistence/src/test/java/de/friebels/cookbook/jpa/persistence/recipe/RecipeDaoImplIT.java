@@ -1,12 +1,8 @@
-package de.friebels.cookbook.jpa.persistence;
+package de.friebels.cookbook.jpa.persistence.recipe;
 
-import java.util.UUID;
+import de.friebels.cookbook.domain.recipe.RecipeDao;
+import de.friebels.cookbook.jpa.persistence.JpaHibernateTest;
 
-import javax.persistence.Persistence;
-
-import de.friebels.cookbook.domain.RecipeDao;
-
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

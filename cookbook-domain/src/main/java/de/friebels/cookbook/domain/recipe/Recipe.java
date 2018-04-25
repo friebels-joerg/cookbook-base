@@ -1,4 +1,8 @@
-package de.friebels.cookbook.domain;
+package de.friebels.cookbook.domain.recipe;
+
+import de.friebels.cookbook.domain.Id;
+import de.friebels.cookbook.domain.Name;
+import de.friebels.cookbook.domain.NumberOfPortions;
 
 public class Recipe {
     private Id id;

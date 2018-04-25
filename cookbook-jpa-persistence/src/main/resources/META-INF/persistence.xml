@@ -7,7 +7,7 @@
     <persistence-unit name="coockbook" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>de.friebels.cookbook.jpa.persistence.RecipeEntity</class>
+        <class>de.friebels.cookbook.jpa.persistence.recipe.RecipeEntity</class>
 
         <properties>
             <!-- Configuring JDBC properties -->

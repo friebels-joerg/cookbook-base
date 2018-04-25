@@ -1,4 +1,4 @@
-package de.friebels.cookbook.jpa.persistence;
+package de.friebels.cookbook.jpa.persistence.recipe;
 
 import java.util.UUID;
 

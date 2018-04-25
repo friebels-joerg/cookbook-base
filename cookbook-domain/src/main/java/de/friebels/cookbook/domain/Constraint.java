@@ -1,5 +1,7 @@
 package de.friebels.cookbook.domain;
 
+import de.friebels.cookbook.domain.recipe.Recipe;
+
 /**
  * use this to chaeck parameters of methods....
  */

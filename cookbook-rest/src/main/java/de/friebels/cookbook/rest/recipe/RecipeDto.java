@@ -1,11 +1,11 @@
-package de.friebels.cookbook.rest;
+package de.friebels.cookbook.rest.recipe;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
 
 @JsonAutoDetect(fieldVisibility = ANY)
-public class RecipeJson {
+public class RecipeDto {
 
     private String id;
     private String name;

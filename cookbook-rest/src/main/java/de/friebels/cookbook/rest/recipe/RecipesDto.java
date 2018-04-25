@@ -1,4 +1,4 @@
-package de.friebels.cookbook.rest;
+package de.friebels.cookbook.rest.recipe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +8,11 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
 
 @JsonAutoDetect(fieldVisibility = ANY)
-public class RecipesJson {
+public class RecipesDto {
 
-    private List<RecipeJson> recipes = new ArrayList<>();
+    private List<RecipeDto> recipes = new ArrayList<>();
 
-    public void add(final RecipeJson recipe) {
+    public void add(final RecipeDto recipe) {
         recipes.add(recipe);
     }
 }

@@ -1,4 +1,6 @@
-package de.friebels.cookbook.rest;
+package de.friebels.cookbook.rest.recipe;
+
+import de.friebels.cookbook.rest.recipe.RecipeController;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
