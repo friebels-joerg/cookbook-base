@@ -31,11 +31,20 @@ public class RecipeEntity {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public boolean idIsNotSet() {
         if (id == null) {
             return true;
         }
 
         return StringUtils.isNoneBlank(id);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("recipeEntity={%s, %s}", getId(), getName());
     }
 }

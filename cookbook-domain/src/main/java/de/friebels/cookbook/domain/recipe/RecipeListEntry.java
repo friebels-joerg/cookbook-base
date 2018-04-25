@@ -25,6 +25,6 @@ public class RecipeListEntry {
 
     @Override
     public String toString() {
-        return "recipe={" + getId() +", " +getName() +"}";
+        return String.format("recipeListEntry={%s, %s}", getId(), getName());
     }
 }
