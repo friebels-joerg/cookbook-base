@@ -1,5 +1,7 @@
 package de.friebels.cookbook.domain.recipe;
 
+import java.util.StringJoiner;
+
 import de.friebels.cookbook.domain.Id;
 import de.friebels.cookbook.domain.Name;
 import de.friebels.cookbook.domain.NumberOfPortions;
@@ -27,6 +29,12 @@ public class Recipe {
 
     @Override
     public String toString() {
-        return String.format("recipe={%s, %s}", getId(), getName());
+        final StringBuilder sb = new StringBuilder();
+        StringJoiner sj = new StringJoiner(", ");
+        if (getId()!=null)
+            sj.add(getId().toString());
+        if (getName()!=null)
+            sj.add(getName().toString());
+        return String.format("recipe={%s}", sj.toString());
     }
 }
