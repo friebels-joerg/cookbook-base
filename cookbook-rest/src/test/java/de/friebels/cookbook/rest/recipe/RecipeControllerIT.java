@@ -1,8 +1,7 @@
 package de.friebels.cookbook.rest.recipe;
 
 import de.friebels.cookbook.domain.recipe.AbstractDaoFactory;
-import de.friebels.cookbook.jpa.persistence.recipe.CookbookTestJpaDaoFactory;
-import de.friebels.cookbook.rest.recipe.RecipeController;
+import de.friebels.cookbook.jpa.persistence.CookbookTestJpaDaoFactory;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Nested;

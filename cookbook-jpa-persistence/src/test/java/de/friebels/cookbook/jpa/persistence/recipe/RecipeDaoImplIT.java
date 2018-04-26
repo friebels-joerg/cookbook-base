@@ -2,6 +2,7 @@ package de.friebels.cookbook.jpa.persistence.recipe;
 
 import de.friebels.cookbook.domain.recipe.AbstractDaoFactory;
 import de.friebels.cookbook.domain.recipe.RecipeDao;
+import de.friebels.cookbook.jpa.persistence.CookbookTestJpaDaoFactory;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;

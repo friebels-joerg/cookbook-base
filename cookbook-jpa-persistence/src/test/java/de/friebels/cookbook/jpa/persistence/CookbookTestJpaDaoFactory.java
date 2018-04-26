@@ -1,4 +1,4 @@
-package de.friebels.cookbook.jpa.persistence.recipe;
+package de.friebels.cookbook.jpa.persistence;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
