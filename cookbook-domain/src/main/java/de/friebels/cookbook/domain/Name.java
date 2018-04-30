@@ -2,26 +2,18 @@ package de.friebels.cookbook.domain;
 
 import java.util.Objects;
 
+import de.friebels.domain.StringAttribute;
+
 import static de.friebels.cookbook.domain.Constraint.checkNotNullable;
 
-public class Name implements Comparable<Name> {
-    private String value;
+public class Name extends StringAttribute implements Comparable<Name> {
 
     private Name(String value) {
-        this.value = checkNotNullable(value, "value");
+        super(checkNotNullable(value, "value"));
     }
 
     public static Name of(final String value) {
         return new Name(value);
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("name=%s", value);
     }
 
     @Override
@@ -30,19 +22,7 @@ public class Name implements Comparable<Name> {
     }
 
     @Override
-    public boolean equals(final Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        final Name name = (Name) o;
-        return Objects.equals(value, name.value);
-    }
-
-    @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return Objects.hash(getValue());
     }
 }

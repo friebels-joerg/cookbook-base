@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static de.friebels.cookbook.domain.NameTemplate.CORDON_BLEU;
-import static de.friebels.cookbook.domain.NameTemplate.HÜHNERFRIKASSE;
+import static de.friebels.cookbook.domain.NameTemplate.HUEHNERFRIKASSE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -24,9 +24,9 @@ class NameTest {
         @Test
         void compareTo() {
             assertAll(
-                    () -> assertThat(HÜHNERFRIKASSE.compareTo(HÜHNERFRIKASSE)).isEqualTo(0),
-                    () -> assertThat(CORDON_BLEU.compareTo(HÜHNERFRIKASSE)).isLessThan(0),
-                    () -> assertThat(HÜHNERFRIKASSE.compareTo(CORDON_BLEU)).isGreaterThan(0)
+                    () -> assertThat(HUEHNERFRIKASSE.compareTo(HUEHNERFRIKASSE)).isEqualTo(0),
+                    () -> assertThat(CORDON_BLEU.compareTo(HUEHNERFRIKASSE)).isLessThan(0),
+                    () -> assertThat(HUEHNERFRIKASSE.compareTo(CORDON_BLEU)).isGreaterThan(0)
             );
         }
     }
