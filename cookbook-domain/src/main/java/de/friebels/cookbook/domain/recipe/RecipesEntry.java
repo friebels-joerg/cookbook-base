@@ -5,31 +5,31 @@ import java.util.StringJoiner;
 import de.friebels.cookbook.domain.Id;
 import de.friebels.cookbook.domain.Name;
 
-public class RecipeListEntry implements Cloneable {
+public class RecipesEntry implements Cloneable {
 
     private Id id;
     private Name name;
 
-    private RecipeListEntry() {
+    private RecipesEntry() {
     }
 
-    public static RecipeListEntry create() {
-        return new RecipeListEntry();
+    public static RecipesEntry create() {
+        return new RecipesEntry();
     }
 
     public Id getId() {
         return id;
     }
 
-    public RecipeListEntry setId(final Id id) {
-        final RecipeListEntry clone = cloneMe();
+    public RecipesEntry setId(final Id id) {
+        final RecipesEntry clone = cloneMe();
         clone.id = id;
         return clone;
     }
 
-    private RecipeListEntry cloneMe() {
+    private RecipesEntry cloneMe() {
         try {
-            return (RecipeListEntry) clone();
+            return (RecipesEntry) clone();
         } catch (CloneNotSupportedException e) {
             // TODO: -JOF- 30.04.18 handle exception
             return null;
@@ -40,8 +40,8 @@ public class RecipeListEntry implements Cloneable {
         return name;
     }
 
-    public RecipeListEntry setName(final Name name) {
-        final RecipeListEntry clone = cloneMe();
+    public RecipesEntry setName(final Name name) {
+        final RecipesEntry clone = cloneMe();
         clone.name = name;
         return clone;
     }
@@ -56,6 +56,6 @@ public class RecipeListEntry implements Cloneable {
         if (getName() != null) {
             sj.add(getName().toString());
         }
-        return String.format("recipeListEntry={%s}", sj.toString());
+        return String.format("recipesEntry={%s}", sj.toString());
     }
 }

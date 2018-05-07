@@ -8,11 +8,11 @@ import javax.persistence.EntityManagerFactory;
 import de.friebels.cookbook.domain.Id;
 import de.friebels.cookbook.domain.recipe.Recipe;
 import de.friebels.cookbook.domain.recipe.RecipeDao;
-import de.friebels.cookbook.domain.recipe.RecipeList;
+import de.friebels.cookbook.domain.recipe.Recipes;
 
 import org.springframework.stereotype.Service;
 
-import static de.friebels.cookbook.jpa.persistence.recipe.RecipeListEntryTemplate.HUEHNERFRIKASSE;
+import static de.friebels.cookbook.jpa.persistence.recipe.RecipesEntryTemplate.HUEHNERFRIKASSE;
 
 @Service
 public class RecipeDaoImpl implements RecipeDao {
@@ -44,8 +44,8 @@ public class RecipeDaoImpl implements RecipeDao {
     }
 
     @Override
-    public RecipeList get() {
-        RecipeList recipes = new RecipeList();
+    public Recipes get() {
+        Recipes recipes = new Recipes();
         recipes.add(HUEHNERFRIKASSE);
         return recipes;
     }
