@@ -3,13 +3,12 @@ package de.friebels.cookbook.domain.recipe;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Stream;
 
-public class Recipes implements Iterable<RecipesEntry> {
+public class Recipes implements Iterable<Recipe> {
 
-    private List<RecipesEntry> recipes = new ArrayList<>();
+    private List<Recipe> recipes = new ArrayList<>();
 
-    public void add(final RecipesEntry recipe) {
+    public void add(final Recipe recipe) {
         recipes.add(recipe);
     }
 
@@ -18,7 +17,7 @@ public class Recipes implements Iterable<RecipesEntry> {
     }
 
     @Override
-    public Iterator<RecipesEntry> iterator() {
+    public Iterator<Recipe> iterator() {
         return recipes.iterator();
     }
 }

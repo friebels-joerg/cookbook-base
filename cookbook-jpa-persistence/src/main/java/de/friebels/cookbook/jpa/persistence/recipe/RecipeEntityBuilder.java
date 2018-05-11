@@ -1,7 +1,5 @@
 package de.friebels.cookbook.jpa.persistence.recipe;
 
-import java.util.UUID;
-
 import de.friebels.cookbook.domain.Id;
 import de.friebels.cookbook.domain.Name;
 

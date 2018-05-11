@@ -23,7 +23,7 @@ class RecipeDaoImplIT {
     }
     @Test
     public void save() {
-        serviceUnderTest.save(RecipeTemplate.HUEHNERFRIKASSE);
+        serviceUnderTest.save(DetailedRecipeTemplate.HUEHNERFRIKASSE);
     }
 
 }

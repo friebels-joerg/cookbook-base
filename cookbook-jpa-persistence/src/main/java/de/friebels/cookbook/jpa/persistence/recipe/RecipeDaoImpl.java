@@ -6,13 +6,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 import de.friebels.cookbook.domain.Id;
-import de.friebels.cookbook.domain.recipe.Recipe;
+import de.friebels.cookbook.domain.recipe.DetailedRecipe;
 import de.friebels.cookbook.domain.recipe.RecipeDao;
 import de.friebels.cookbook.domain.recipe.Recipes;
 
 import org.springframework.stereotype.Service;
 
-import static de.friebels.cookbook.jpa.persistence.recipe.RecipesEntryTemplate.HUEHNERFRIKASSE;
+import static de.friebels.cookbook.jpa.persistence.recipe.RecipeTemplate.HUEHNERFRIKASSE;
 
 @Service
 public class RecipeDaoImpl implements RecipeDao {
@@ -24,7 +24,7 @@ public class RecipeDaoImpl implements RecipeDao {
     }
 
     @Override
-    public Id save(final Recipe recipe) {
+    public Id save(final DetailedRecipe recipe) {
 
         final RecipeEntity recipeEntity = convertToEntity(recipe);
         if (recipeEntity.idIsNotSet()) {
@@ -50,7 +50,7 @@ public class RecipeDaoImpl implements RecipeDao {
         return recipes;
     }
 
-    private RecipeEntity convertToEntity(final Recipe recipe) {
+    private RecipeEntity convertToEntity(final DetailedRecipe recipe) {
         return RecipeEntityBuilder
                 .builder()
                 .withName(recipe.getName())

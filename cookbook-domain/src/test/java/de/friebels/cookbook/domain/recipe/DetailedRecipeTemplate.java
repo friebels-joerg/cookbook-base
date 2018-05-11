@@ -2,9 +2,9 @@ package de.friebels.cookbook.domain.recipe;
 
 import de.friebels.cookbook.domain.Name;
 
-public class RecipeTemplate {
+public class DetailedRecipeTemplate {
 
-    static final Recipe HUEHNERFRIKASSE = Recipe.create()
+    static final DetailedRecipe HUEHNERFRIKASSE = DetailedRecipe.create()
             .setName(Name.of("Hühnerfrikasse"));
 }
 

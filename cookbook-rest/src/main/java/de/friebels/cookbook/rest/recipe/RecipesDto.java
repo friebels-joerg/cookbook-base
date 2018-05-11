@@ -9,11 +9,11 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
 
 @JsonAutoDetect(fieldVisibility = ANY)
-public class RecipesDto implements  Iterable<RecipesEntryDto>{
+public class RecipesDto implements  Iterable<RecipeDto>{
 
-    private List<RecipesEntryDto> recipes = new ArrayList<>();
+    private List<RecipeDto> recipes = new ArrayList<>();
 
-    public void add(final RecipesEntryDto recipe) {
+    public void add(final RecipeDto recipe) {
         recipes.add(recipe);
     }
 
@@ -22,7 +22,7 @@ public class RecipesDto implements  Iterable<RecipesEntryDto>{
     }
 
     @Override
-    public Iterator<RecipesEntryDto> iterator() {
+    public Iterator<RecipeDto> iterator() {
         return recipes.iterator();
     }
 }

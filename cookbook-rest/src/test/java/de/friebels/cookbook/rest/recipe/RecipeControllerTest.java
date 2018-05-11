@@ -2,8 +2,7 @@ package de.friebels.cookbook.rest.recipe;
 
 import de.friebels.cookbook.domain.recipe.RecipeDao;
 import de.friebels.cookbook.domain.recipe.Recipes;
-import de.friebels.cookbook.jpa.persistence.recipe.RecipeDaoImpl;
-import de.friebels.cookbook.jpa.persistence.recipe.RecipesEntryTemplate;
+import de.friebels.cookbook.jpa.persistence.recipe.RecipeTemplate;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -30,7 +29,7 @@ class RecipeControllerTest {
 
 
         final Recipes recipes = new Recipes();
-        recipes.add(RecipesEntryTemplate.HUEHNERFRIKASSE);
+        recipes.add(RecipeTemplate.HUEHNERFRIKASSE);
         Mockito.when(recipeDao.get()).thenReturn(recipes);
 
         final RecipesDto recipesDto = sut.getRecipes();
